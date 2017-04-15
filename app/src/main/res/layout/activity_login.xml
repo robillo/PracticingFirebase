@@ -8,4 +8,83 @@
     android:layout_height="match_parent"
     tools:context="com.appbusters.robinkamboj.practicingfirebase.LoginActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round"
+            android:id="@+id/icon"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="GRE"
+            android:textSize="30sp"
+            android:padding="4sp"
+            android:textColor="@color/colorWhiteShade"
+            android:textStyle="bold"
+            android:layout_below="@+id/icon"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/one"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Word List"
+            android:textSize="25sp"
+            android:padding="4sp"
+            android:textColor="@color/colorPrimaryLight"
+            android:textStyle="bold"
+            android:layout_below="@+id/one"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/two"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:paddingStart="5sp"
+        android:paddingEnd="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="User Name:"
+            android:textSize="15sp"
+            android:padding="4sp"
+            android:textColor="@color/colorWhiteShade"
+            android:textStyle="bold"
+            android:id="@+id/three"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Robin Kamboj"
+            android:textColorHint="@color/colorWhiteShade"
+            android:paddingStart="5sp"
+            android:paddingEnd="5sp"
+            android:backgroundTint="@color/colorWhiteShade"
+            android:layout_below="@id/three"
+            android:textColor="@color/colorWhiteShade"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1">
+
+    </RelativeLayout>
+
 </LinearLayout>
