@@ -9,11 +9,6 @@
     tools:context="com.appbusters.robinkamboj.practicingfirebase.LoginActivity"
     android:gravity="center_horizontal">
 
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="0sp"
-        android:layout_weight="1"/>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +22,6 @@
         android:textSize="30sp"
         android:textColor="@color/colorWhiteShade"
         android:fontFamily="sans-serif-smallcaps"
-        android:layout_weight="1"
         android:padding="4sp"/>
 
     <TextView
@@ -37,13 +31,8 @@
         android:textSize="25sp"
         android:textColor="@color/colorPrimaryLight"
         android:fontFamily="sans-serif-smallcaps"
-        android:layout_weight="1"
-        android:padding="4sp"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="0sp"
-        android:layout_weight="1"/>
+        android:padding="4sp"
+        android:layout_weight="0.97" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,5 +95,25 @@
         android:fontFamily="casual"
         android:layout_weight="1"
         android:padding="4sp"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:layout_weight="1">
+
+    </com.google.android.gms.common.SignInButton>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:text="FACEBOOK"
+        android:padding="10sp"
+        android:paddingStart="15sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:paddingEnd="15sp"
+        android:textColor="@color/colorWhiteShade"
+        android:backgroundTint="#3b5998"
+        android:textStyle="bold"/>
 
 </LinearLayout>
