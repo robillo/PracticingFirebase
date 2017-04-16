@@ -54,7 +54,8 @@
         android:paddingStart="15sp"
         android:paddingEnd="15sp"
         android:textColor="@color/colorWhiteShade"
-        android:backgroundTint="@color/colorAccent"/>
+        android:backgroundTint="@color/colorAccent"
+        android:id="@+id/custom_login"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +68,8 @@
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/google_sign_in">
 
     </com.google.android.gms.common.SignInButton>
 
@@ -81,6 +83,7 @@
         android:paddingEnd="15sp"
         android:textColor="@color/colorWhiteShade"
         android:backgroundTint="#3b5998"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:id="@+id/facebook_sign_in"/>
 
 </LinearLayout>
