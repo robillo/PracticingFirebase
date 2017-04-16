@@ -6,131 +6,105 @@
     android:background="@drawable/gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.appbusters.robinkamboj.practicingfirebase.LoginActivity">
+    tools:context="com.appbusters.robinkamboj.practicingfirebase.LoginActivity"
+    android:gravity="center_horizontal">
 
-    <RelativeLayout
+    <android.support.v4.widget.Space
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="3"
-        android:gravity="center_vertical">
+        android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"
-            android:id="@+id/icon"
-            android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_weight="1"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="GRE"
-            android:textSize="30sp"
-            android:padding="4sp"
-            android:textColor="@color/colorWhiteShade"
-            android:textStyle="bold"
-            android:layout_below="@+id/icon"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/one"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GRE"
+        android:textSize="30sp"
+        android:textColor="@color/colorWhiteShade"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_weight="1"
+        android:padding="4sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Word List"
-            android:textSize="25sp"
-            android:padding="4sp"
-            android:textColor="@color/colorPrimaryLight"
-            android:textStyle="bold"
-            android:layout_below="@+id/one"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/two"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Word List"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryLight"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_weight="1"
+        android:padding="4sp"/>
 
-    </RelativeLayout>
-
-    <RelativeLayout
+    <android.support.v4.widget.Space
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="4"
-        android:paddingStart="5sp"
-        android:paddingEnd="5sp">
+        android:layout_weight="1"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="User Name:"
-            android:textSize="15sp"
-            android:padding="4sp"
-            android:textColor="@color/colorWhiteShade"
-            android:textStyle="bold"
-            android:id="@+id/three"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:text="User Name:"
+        android:textSize="15sp"
+        android:textColor="@color/colorWhiteShade"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_weight="1"
+        android:padding="4sp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Robin Kamboj"
-            android:textColorHint="@color/colorWhiteShade"
-            android:paddingStart="5sp"
-            android:paddingEnd="5sp"
-            android:backgroundTint="@color/colorWhiteShade"
-            android:layout_below="@id/three"
-            android:textColor="@color/colorWhiteShade"
-            android:id="@+id/user_name"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Email:"
-            android:textSize="15sp"
-            android:padding="4sp"
-            android:textColor="@color/colorWhiteShade"
-            android:layout_below="@id/user_name"
-            android:textStyle="bold"
-            android:id="@+id/four"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="dev.robinkamboj@gmail.com"
-            android:textColorHint="@color/colorWhiteShade"
-            android:paddingStart="5sp"
-            android:paddingEnd="5sp"
-            android:backgroundTint="@color/colorWhiteShade"
-            android:layout_below="@id/four"
-            android:textColor="@color/colorWhiteShade"
-            android:id="@+id/user_email"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/login"
-            android:text="Login"
-            android:backgroundTint="@color/colorAccent"
-            android:paddingStart="50sp"
-            android:paddingEnd="50sp"
-            android:textColor="@color/colorWhiteShade"
-            android:layout_below="@+id/user_email"
-            android:layout_centerHorizontal="true"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Not A Member? Sign In"
-            android:background="?android:attr/selectableItemBackground"
-            android:textColor="@color/colorWhiteShade"
-            android:layout_below="@id/login"
-            android:layout_centerHorizontal="true"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="2">
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        android:textColorHint="@color/colorWhiteShade"
+        android:backgroundTint="@color/colorWhiteShade"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Username Goes Here"
+        android:layout_weight="1"/>
 
-    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:text="Email:"
+        android:textSize="15sp"
+        android:textColor="@color/colorWhiteShade"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_weight="1"
+        android:padding="4sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        android:textColorHint="@color/colorWhiteShade"
+        android:backgroundTint="@color/colorWhiteShade"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Email ID Goes Here"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:text="LOGIN"
+        android:paddingStart="15sp"
+        android:paddingEnd="15sp"
+        android:textColor="@color/colorWhiteShade"
+        android:backgroundTint="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0sp"
+        android:text="OR"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhiteShade"
+        android:fontFamily="casual"
+        android:layout_weight="1"
+        android:padding="4sp"/>
 
 </LinearLayout>
