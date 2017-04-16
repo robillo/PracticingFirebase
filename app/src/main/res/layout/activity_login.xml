@@ -9,77 +9,47 @@
     tools:context="com.appbusters.robinkamboj.practicingfirebase.LoginActivity"
     android:gravity="center_horizontal">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_weight="1"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GRE"
-        android:textSize="30sp"
-        android:textColor="@color/colorWhiteShade"
-        android:fontFamily="sans-serif-smallcaps"
-        android:padding="4sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Word List"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimaryLight"
-        android:fontFamily="sans-serif-smallcaps"
-        android:padding="4sp"
-        android:layout_weight="0.97" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0sp"
         android:text="User Name:"
         android:textSize="15sp"
         android:textColor="@color/colorWhiteShade"
         android:fontFamily="sans-serif-smallcaps"
-        android:layout_weight="1"
         android:padding="4sp"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="0sp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10sp"
         android:layout_marginEnd="10sp"
         android:textColorHint="@color/colorWhiteShade"
         android:backgroundTint="@color/colorWhiteShade"
         android:fontFamily="sans-serif-smallcaps"
-        android:hint="Username Goes Here"
-        android:layout_weight="1"/>
+        android:hint="Username Goes Here"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0sp"
+        android:layout_height="wrap_content"
         android:text="Email:"
         android:textSize="15sp"
         android:textColor="@color/colorWhiteShade"
         android:fontFamily="sans-serif-smallcaps"
-        android:layout_weight="1"
         android:padding="4sp"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="0sp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10sp"
         android:layout_marginEnd="10sp"
         android:textColorHint="@color/colorWhiteShade"
         android:backgroundTint="@color/colorWhiteShade"
         android:fontFamily="sans-serif-smallcaps"
-        android:hint="Email ID Goes Here"
-        android:layout_weight="1"/>
+        android:hint="Email ID Goes Here"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="0sp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="LOGIN"
         android:paddingStart="15sp"
         android:paddingEnd="15sp"
@@ -88,25 +58,22 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0sp"
+        android:layout_height="wrap_content"
         android:text="OR"
         android:textSize="25sp"
         android:textColor="@color/colorWhiteShade"
         android:fontFamily="casual"
-        android:layout_weight="1"
         android:padding="4sp"/>
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="wrap_content"
-        android:layout_height="0sp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
     </com.google.android.gms.common.SignInButton>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="0sp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="FACEBOOK"
         android:padding="10sp"
         android:paddingStart="15sp"
