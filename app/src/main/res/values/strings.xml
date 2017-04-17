@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Practicing Firebase</string>
+    <string name="facebook_app_id">749627021864011</string>
 </resources>
