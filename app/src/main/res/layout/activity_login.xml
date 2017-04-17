@@ -73,17 +73,9 @@
 
     </com.google.android.gms.common.SignInButton>
 
-    <Button
+    <com.facebook.login.widget.LoginButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FACEBOOK"
-        android:padding="10sp"
-        android:paddingStart="15sp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:paddingEnd="15sp"
-        android:textColor="@color/colorWhiteShade"
-        android:backgroundTint="#3b5998"
-        android:textStyle="bold"
         android:id="@+id/facebook_sign_in"/>
 
 </LinearLayout>
