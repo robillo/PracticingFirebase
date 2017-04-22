@@ -55,14 +55,14 @@ public class MainActivity extends AppCompatActivity {
         mot.put("Career Motivation", Boolean.TRUE);
 
         rel= new HashMap<>();
-        rel.put("rel1", Boolean.TRUE);
-        rel.put("rel2", Boolean.FALSE);
-        rel.put("rel3", Boolean.TRUE);
-        rel.put("rel4", Boolean.FALSE);
-        rel.put("rel5", Boolean.TRUE);
-        rel.put("rel6", Boolean.FALSE);
-        rel.put("rel7", Boolean.TRUE);
-        rel.put("rel8", Boolean.FALSE);
+        rel.put("God", Boolean.TRUE);
+        rel.put("Geeta", Boolean.FALSE);
+        rel.put("Mahabharat", Boolean.TRUE);
+        rel.put("Quotes", Boolean.FALSE);
+        rel.put("Bhajan", Boolean.TRUE);
+        rel.put("Prayers", Boolean.FALSE);
+        rel.put("Stories", Boolean.TRUE);
+        rel.put("Ramayan", Boolean.FALSE);
 
         ast = new HashMap<>();
         ast.put("ast1", Boolean.TRUE);
