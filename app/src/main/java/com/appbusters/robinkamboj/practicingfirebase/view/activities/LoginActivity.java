@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.practicingfirebase;
+package com.appbusters.robinkamboj.practicingfirebase.view.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.appbusters.robinkamboj.practicingfirebase.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -54,10 +55,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    Log.e(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
                     // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                    Log.e(TAG, "onAuthStateChanged:signed_out");
                 }
                 // ...
             }
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+
         google_sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,19 +86,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         facebook_sign_in.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.d("STATUS", "facebook:onSuccess:" + loginResult);
+                Log.e("STATUS", "facebook:onSuccess:" + loginResult);
                 handleFacebookAccessToken(loginResult.getAccessToken());
             }
 
             @Override
             public void onCancel() {
-                Log.d("STATUS", "facebook:onCancel");
+                Log.e("STATUS", "facebook:onCancel");
 
             }
 
             @Override
             public void onError(FacebookException error) {
-                Log.d("STATUS", "facebook:onError", error);
+                Log.e("STATUS", "facebook:onError", error);
             }
         });
 
@@ -128,7 +130,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("NEWS", "signInWithCredential:onComplete:" + task.isSuccessful());
+                        Log.e("NEWS", "signInWithCredential:onComplete:" + task.isSuccessful());
 
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
@@ -156,14 +158,14 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void handleFacebookAccessToken(AccessToken token) {
-        Log.d("STATUS", "handleFacebookAccessToken:" + token);
+        Log.e("STATUS", "handleFacebookAccessToken:" + token);
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("STATUS", "signInWithCredential:onComplete:" + task.isSuccessful());
+                        Log.e("STATUS", "signInWithCredential:onComplete:" + task.isSuccessful());
 
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
