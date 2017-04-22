@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser mFirebaseUser;
     private TextView info;
 
+    private HashMap<String, HashMap<String, Boolean>> allInterests;
     private HashMap<String, Boolean> mot, rel, ast, yog, ayu, hea, die;
 
     @Override
@@ -90,7 +91,16 @@ public class MainActivity extends AppCompatActivity {
         die.put("die3", Boolean.TRUE);
         die.put("die4", Boolean.FALSE);
 
-        User user = new User(mFirebaseUser.getDisplayName(), mFirebaseUser.getEmail());
+        allInterests = new HashMap<>();
+        allInterests.put("Motivation", mot);
+        allInterests.put("Religion", rel);
+        allInterests.put("Astrology", ast);
+        allInterests.put("Yoga", yog);
+        allInterests.put("Ayurveda", ayu);
+        allInterests.put("Health", hea);
+        allInterests.put("Diet", die);
+
+        User user = new User(mFirebaseUser.getDisplayName(), mFirebaseUser.getEmail(), "I AM ROBIN KAMBOJ, AN ANDORID DEVELOPER!....", "EN", "ROBIN.JPG", "COVER.PNG", allInterests, Boolean.TRUE);
         mDatabase.child(mFirebaseUser.getUid()).setValue(user);
 
         mDatabase.child(mFirebaseUser.getUid()).addValueEventListener(new ValueEventListener() {

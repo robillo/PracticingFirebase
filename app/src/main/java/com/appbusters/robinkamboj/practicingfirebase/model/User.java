@@ -12,27 +12,41 @@ public class User {
     private String coverUrl;
     private HashMap<String, Boolean> motivation, religion, astrology, yoga, ayurveda, health, diet;
     private Boolean standardUser = Boolean.TRUE;
+    private HashMap<String, HashMap<String, Boolean>> allInterests;
+
+    public User() {
+
+    }
 
     public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    public User(String name, String email, String bio, String preferredLang, String photoUrl, String coverUrl, HashMap<String, Boolean> motivation, HashMap<String, Boolean> religion, HashMap<String, Boolean> astrology, HashMap<String, Boolean> yoga, HashMap<String, Boolean> ayurveda, HashMap<String, Boolean> health, HashMap<String, Boolean> diet, Boolean standardUser) {
+    public User(String name, String email, String bio, String preferredLang, String photoUrl, String coverUrl, HashMap<String, HashMap<String, Boolean>> allInterests, Boolean standardUser) {
         this.name = name;
         this.email = email;
         this.bio = bio;
         this.preferredLang = preferredLang;
         this.photoUrl = photoUrl;
         this.coverUrl = coverUrl;
-        this.motivation = motivation;
-        this.religion = religion;
-        this.astrology = astrology;
-        this.yoga = yoga;
-        this.ayurveda = ayurveda;
-        this.health = health;
-        this.diet = diet;
+        this.allInterests = allInterests;
+//        this.motivation = motivation;
+//        this.religion = religion;
+//        this.astrology = astrology;
+//        this.yoga = yoga;
+//        this.ayurveda = ayurveda;
+//        this.health = health;
+//        this.diet = diet;
         this.standardUser = standardUser;
+    }
+
+    public HashMap<String, HashMap<String, Boolean>> getAllInterests() {
+        return allInterests;
+    }
+
+    public void setAllInterests(HashMap<String, HashMap<String, Boolean>> allInterests) {
+        this.allInterests = allInterests;
     }
 
     public String getName() {
