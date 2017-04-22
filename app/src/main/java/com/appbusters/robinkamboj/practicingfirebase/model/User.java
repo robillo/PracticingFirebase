@@ -1,5 +1,6 @@
 package com.appbusters.robinkamboj.practicingfirebase.model;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public class User {
@@ -13,6 +14,10 @@ public class User {
     private HashMap<String, Boolean> motivation, religion, astrology, yoga, ayurveda, health, diet;
     private Boolean standardUser = Boolean.TRUE;
     private HashMap<String, HashMap<String, Boolean>> allInterests;
+    private String DOB;
+    private String gender;
+    private String phone;
+    private int age;
 
     public User() {
 
@@ -23,7 +28,7 @@ public class User {
         this.email = email;
     }
 
-    public User(String name, String email, String bio, String preferredLang, String photoUrl, String coverUrl, HashMap<String, HashMap<String, Boolean>> allInterests, Boolean standardUser) {
+    public User(String name, String email, String bio, String preferredLang, String photoUrl, String coverUrl, HashMap<String, HashMap<String, Boolean>> allInterests, Boolean standardUser, String DOB, String gender, String phone, int age) {
         this.name = name;
         this.email = email;
         this.bio = bio;
@@ -39,6 +44,42 @@ public class User {
 //        this.health = health;
 //        this.diet = diet;
         this.standardUser = standardUser;
+        this.DOB = DOB;
+        this.gender = gender;
+        this.phone = phone;
+        this.age = age;
+    }
+
+    public String getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public HashMap<String, HashMap<String, Boolean>> getAllInterests() {

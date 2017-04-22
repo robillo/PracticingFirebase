@@ -37,12 +37,22 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
         mot = new HashMap<>();
-        mot.put("mot1", Boolean.TRUE);
-        mot.put("mot2", Boolean.TRUE);
-        mot.put("mot3", Boolean.FALSE);
-        mot.put("mot4", Boolean.TRUE);
-        mot.put("mot5", Boolean.FALSE);
-        mot.put("mot6", Boolean.TRUE);
+        mot.put("Inspiration", Boolean.TRUE);
+        mot.put("Stories", Boolean.TRUE);
+        mot.put("Life", Boolean.FALSE);
+        mot.put("Learning", Boolean.TRUE);
+        mot.put("Good Thoughts", Boolean.FALSE);
+        mot.put("Thought Of The Day", Boolean.TRUE);
+        mot.put("Speeches", Boolean.TRUE);
+        mot.put("Moral Stories", Boolean.TRUE);
+        mot.put("Real Life Inspiration", Boolean.TRUE);
+        mot.put("Quotes", Boolean.TRUE);
+        mot.put("Courage", Boolean.TRUE);
+        mot.put("Happiness", Boolean.TRUE);
+        mot.put("Confidence", Boolean.TRUE);
+        mot.put("Psychology", Boolean.TRUE);
+        mot.put("Fight Depression", Boolean.TRUE);
+        mot.put("Career Motivation", Boolean.TRUE);
 
         rel= new HashMap<>();
         rel.put("rel1", Boolean.TRUE);
@@ -100,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
         allInterests.put("Health", hea);
         allInterests.put("Diet", die);
 
-        User user = new User(mFirebaseUser.getDisplayName(), mFirebaseUser.getEmail(), "I AM ROBIN KAMBOJ, AN ANDORID DEVELOPER!....", "EN", "ROBIN.JPG", "COVER.PNG", allInterests, Boolean.TRUE);
+        User user = new User(mFirebaseUser.getDisplayName(), mFirebaseUser.getEmail(), "I AM ROBIN KAMBOJ, AN ANDORID DEVELOPER!....", "EN", "ROBIN.JPG", "COVER.PNG", allInterests, Boolean.TRUE,
+                "12.2.17", "MALE", "7042337414", 20);
         mDatabase.child(mFirebaseUser.getUid()).setValue(user);
 
         mDatabase.child(mFirebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
