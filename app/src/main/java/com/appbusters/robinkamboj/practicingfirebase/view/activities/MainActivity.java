@@ -14,12 +14,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
     private TextView info;
+
+    private HashMap<String, Boolean> mot, rel, ast, yog, ayu, hea, die;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +34,70 @@ public class MainActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        User user = new User(mFirebaseUser.getDisplayName(), mFirebaseUser.getEmail(), mFirebaseUser.getUid());
-        mDatabase.child(user.getUid()).setValue(user);
 
-        mDatabase.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+        mot = new HashMap<>();
+        mot.put("mot1", Boolean.TRUE);
+        mot.put("mot2", Boolean.TRUE);
+        mot.put("mot3", Boolean.FALSE);
+        mot.put("mot4", Boolean.TRUE);
+        mot.put("mot5", Boolean.FALSE);
+        mot.put("mot6", Boolean.TRUE);
+
+        rel= new HashMap<>();
+        rel.put("rel1", Boolean.TRUE);
+        rel.put("rel2", Boolean.FALSE);
+        rel.put("rel3", Boolean.TRUE);
+        rel.put("rel4", Boolean.FALSE);
+        rel.put("rel5", Boolean.TRUE);
+        rel.put("rel6", Boolean.FALSE);
+        rel.put("rel7", Boolean.TRUE);
+        rel.put("rel8", Boolean.FALSE);
+
+        ast = new HashMap<>();
+        ast.put("ast1", Boolean.TRUE);
+        ast.put("ast2", Boolean.FALSE);
+        ast.put("ast3", Boolean.TRUE);
+        ast.put("ast4", Boolean.FALSE);
+
+        yog = new HashMap<>();
+        yog.put("yog1", Boolean.TRUE);
+        yog.put("yog2", Boolean.FALSE);
+        yog.put("yog3", Boolean.TRUE);
+        yog.put("yog4", Boolean.FALSE);
+        yog.put("yog5", Boolean.TRUE);
+        yog.put("yog6", Boolean.FALSE);
+
+        ayu = new HashMap<>();
+        ayu.put("ayu1", Boolean.TRUE);
+        ayu.put("ayu2", Boolean.FALSE);
+        ayu.put("ayu3", Boolean.TRUE);
+        ayu.put("ayu4", Boolean.FALSE);
+        ayu.put("ayu5", Boolean.TRUE);
+
+        hea = new HashMap<>();
+        hea.put("hea1", Boolean.TRUE);
+        hea.put("hea2", Boolean.FALSE);
+        hea.put("hea3", Boolean.TRUE);
+        hea.put("hea4", Boolean.FALSE);
+        hea.put("hea5", Boolean.TRUE);
+        hea.put("hea6", Boolean.FALSE);
+        hea.put("hea7", Boolean.TRUE);
+        hea.put("hea8", Boolean.FALSE);
+
+        die = new HashMap<>();
+        die.put("die1", Boolean.TRUE);
+        die.put("die2", Boolean.FALSE);
+        die.put("die3", Boolean.TRUE);
+        die.put("die4", Boolean.FALSE);
+
+        User user = new User(mFirebaseUser.getDisplayName(), mFirebaseUser.getEmail());
+        mDatabase.child(mFirebaseUser.getUid()).setValue(user);
+
+        mDatabase.child(mFirebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                String temp = user.getName() + "\n" +  user.getEmail() + "\n" + user.getUid();
+                String temp = user.getName() + "\n" +  user.getEmail() + "\n";
                 info.setText(temp);
             }
 
