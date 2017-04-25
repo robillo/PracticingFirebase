@@ -1,10 +1,15 @@
 package com.appbusters.robinkamboj.practicingfirebase.view.activities;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,20 +41,30 @@ public class MainActivity extends AppCompatActivity {
 
     private HashMap<String, HashMap<String, Boolean>> allInterests;
     private HashMap<String, Boolean> mot, rel, ast, yog, ayu, hea, die;
-    private static final int RESULT_LOAD_IMAGE = 8008;
-    private ImageButton userProfilePic;
-
-//    @BindView(R.id.user_profile_photo)
-//    ImageButton userProfilePhoto;
-//    @BindView(R.id.header_cover_image)
-//    ImageButton userCoverPhoto;
+    private static final int RESULT_LOAD_IMAGE = 8008, RESULT_LOAD_COVER = 8009;
+    private ImageButton userProfilePic, userCoverPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 5);
+        }
+
         userProfilePic = (ImageButton) findViewById(R.id.user_profile_photo);
+        userCoverPic = (ImageButton) findViewById(R.id.header_cover_image);
+
+        userCoverPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(
+                        Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, RESULT_LOAD_COVER);
+            }
+        });
 
         userProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,12 +187,33 @@ public class MainActivity extends AppCompatActivity {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
+            Log.e("REQUEST BEFORE", picturePath);
             Glide.with(this)
                     .load(picturePath)
+                    .crossFade()
+                    .centerCrop()
                     .into(userProfilePic);
 
+            Log.e("REQUEST AFTER", picturePath);
         }
+        else if(requestCode == RESULT_LOAD_COVER && resultCode == RESULT_OK && null != data){
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
+            Cursor cursor = getContentResolver().query(selectedImage,
+                    filePathColumn, null, null, null);
+            cursor.moveToFirst();
+
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+            Glide.with(this)
+                    .load(picturePath)
+                    .crossFade()
+                    .centerCrop()
+                    .into(userCoverPic);
+        }
 
     }
 }
