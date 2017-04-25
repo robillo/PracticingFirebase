@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
-    private TextView info;
 
     private HashMap<String, HashMap<String, Boolean>> allInterests;
     private HashMap<String, Boolean> mot, rel, ast, yog, ayu, hea, die;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        info = (TextView) findViewById(R.id.info);
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -118,13 +116,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                String temp = user.getName() + "\n" +  user.getEmail() + "\n";
-                info.setText(temp);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                info.setText("Cancelled!");
+
             }
         });
     }
